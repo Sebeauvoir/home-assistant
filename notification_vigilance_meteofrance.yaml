@@ -36,7 +36,7 @@ action:
                 'Canicule', 'Grand-froid', 'Avalanches', 'Vagues-submersion'] -%}
                 {%- if state_attr(weather_alert_sensor, attr) != 'Vert' and state_attr(weather_alert_sensor, attr)
                 != None %}\n
-                </b> {{attr}} : {{state_attr(weather_alert_sensor, attr)}}
+                - {{attr}} : {{state_attr(weather_alert_sensor, attr)}}
                 {%- endif -%}
                 {% endfor -%}"
               clickAction: "https://vigilance.meteofrance.fr/fr"
