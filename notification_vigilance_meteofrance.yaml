@@ -39,6 +39,7 @@ action:
                 - {{attr}} : {{state_attr(weather_alert_sensor, attr)}}
                 {%- endif -%}
                 {% endfor -%}"
+              clickAction: "https://vigilance.meteofrance.fr/fr"
       - conditions:
           - condition: state
             entity_id: !input sensor_weather_alert
