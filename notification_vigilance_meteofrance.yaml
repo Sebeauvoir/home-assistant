@@ -32,7 +32,7 @@ action:
             data:
               title: "Vigilance Météo France en cours"
               message:
-                "{%- for attr in ['Vent violent', 'Pluie-inondation', 'Orages', 'Inondation', 'Neige-verglas',
+                "\n{%- for attr in ['Vent violent', 'Pluie-inondation', 'Orages', 'Inondation', 'Neige-verglas',
                 'Canicule', 'Grand-froid', 'Avalanches', 'Vagues-submersion'] -%}
                 {%- if state_attr(weather_alert_sensor, attr) != 'Vert' and state_attr(weather_alert_sensor, attr)
                 != None %}\n
