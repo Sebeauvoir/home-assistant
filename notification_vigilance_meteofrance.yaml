@@ -1,6 +1,6 @@
 blueprint:
-  name: "Notification en cas de vigilance météo"
-  description: "Envoie une notification si une vigilance orange/rouge est activée ou levée par Météo France"
+  name: "Notification pour alerte météo"
+  description: "Envoie une notification si une alerte météo est levée par Météo-France"
   domain: automation
   input:
     sensor_weather_alert:
@@ -39,7 +39,6 @@ action:
                 - {{attr}} : {{state_attr(weather_alert_sensor, attr)}}
                 {%- endif -%}
                 {% endfor -%}"
-              clickAction: "https://vigilance.meteofrance.fr/fr"
       - conditions:
           - condition: state
             entity_id: !input sensor_weather_alert
@@ -50,4 +49,4 @@ action:
         sequence:
           - service: !input notifier
             data:
-              message: "Fin de la vigilance météo"
+              message: "Fin de l'alerte météo."
