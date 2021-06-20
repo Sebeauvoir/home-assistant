@@ -30,8 +30,8 @@ action:
         sequence:
           - service: !input notifier
             data:
+              title: "Vigilance Météo France en cours"
               message:
-                "Vigilance Météo France en cours:\n
                 {%- for attr in ['Vent violent', 'Pluie-inondation', 'Orages', 'Inondation', 'Neige-verglas',
                 'Canicule', 'Grand-froid', 'Avalanches', 'Vagues-submersion'] -%}
                 {%- if state_attr(weather_alert_sensor, attr) != 'Vert' and state_attr(weather_alert_sensor, attr)
